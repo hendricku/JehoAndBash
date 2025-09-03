@@ -38,11 +38,11 @@ const OurStory = () => {
                 <p className="mb-4 text-lg text-stone-600">
                   It all began on a crisp autumn evening under a sky full of
                   stars. A chance encounter, a shared laugh, and a connection
-                  that felt like coming home. We've built a life filled with
+                  that felt like coming home. We&apos;ve built a life filled with
                   adventure, quiet moments, and endless support.
                 </p>
                 <p className="text-lg text-stone-600">
-                  Now, we're ready to start our greatest adventure yet. We're so
+                  Now, we&apos;re ready to start our greatest adventure yet. We&apos;re so
                   excited to celebrate the beginning of our forever with you, the
                   people who mean the most to us.
                 </p>

@@ -25,7 +25,7 @@ const Location = () => {
               Location
             </p>
             <h2 className="mt-2 font-serif text-5xl font-bold text-stone-800 md:text-6xl">
-              We'll see you at Pinewoods
+              We&apos;ll see you at Pinewoods
             </h2>
           </motion.div>
           <motion.div {...fadeInAnimation} transition={{ ...fadeInAnimation.transition, delay: 0.2 }}>

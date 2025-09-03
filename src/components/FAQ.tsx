@@ -25,8 +25,8 @@ function DressCodeContent() {
         </ul>
       </div>
       <p className="pt-4 text-center italic text-stone-500">
-        "Our celebration embraces the elegance of simplicity, and black has been
-        chosen as the color of timeless style."
+        &quot;Our celebration embraces the elegance of simplicity, and black has been
+        chosen as the color of timeless style.&quot;
       </p>
     </div>
   );
