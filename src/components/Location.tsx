@@ -1,14 +1,22 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 // Animation variant for elements to fade in from below
-const fadeInAnimation = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, ease: "easeInOut" },
-  viewport: { once: true, amount: 0.2 },
+const fadeInAnimation: Variants = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  whileInView: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
 };
 
 const Location = () => {
