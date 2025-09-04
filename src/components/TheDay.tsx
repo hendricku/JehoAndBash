@@ -3,16 +3,16 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 
-// --- DATA: All names are stored here for easy editing ---
+// --- DATA (Unchanged) ---
 const entourageData = {
   principalSponsors: {
     left: ["Rolly Domenden", "Antonio Mararang", "Marvin Jose Madayag", "Roberto Maliwat", "Alex Viray", "Roger Carlo Cobrado", "Armando Claveria"],
-    right: ["Rowena Sanchez", "Myrna Pacleb", "Maribel Hufalar", "Aljane Silvania", "Evalou Caragay", "Evadine Valle", "Rosemarie Viray", "Daisy Sabado", "Elizabeth Anicoche", "Filamor Dyouihangco", "Laurice Diosan-Valdez"],
+    right: ["Rowena Sanchez", "Myrna Pacleb", "Maribel Hufalar", "Aljane Silvania", "Evalou Caragay", "Evadine Valle", "Rosemarie Viray", "Daisy Sabado", "Elizabeth Anicoche", "Filamor Dyquiangco", "Laurice Diosan-Valdez"],
   },
   bestMan: ["Jezreel David Ariz"],
   maidOfHonor: ["Queensy Payabyab"],
   groomsmen: ["Mark Jacob Cobrado", "Daniel Cobrado", "Hero Castro", "Briggs Maglaya", "Edsel Molina", "Champ Cargamento", "Jairus Pajara"],
-  bridesmen: ["Janzi Paul Buddle", "Christian Patrick Reijnders", "Vincent Thomas Dyouihangco", "Daniel Isaac Viray", "Marvin Kyle Madayag", "Jack Warren Soriano", "Roberto Leon Ortega"],
+  bridesmen: ["Janzi Paul Buddle", "Christian Patrick Reijnders", "Vincent Thomas Dyquiangco", "Daniel Isaac Viray", "Marvin Kyle Madayag", "Jack Warren Soriano", "Roberto Leon Ortega"],
   secondarySponsors: {
     left: ["Arianna Rosales", "Lyra Sanchez", "Swedelyn Resyl Mencias"],
     right: ["Cairo Rosales", "Mark Joshua Sanchez", "Kurt Denver Obra"],
@@ -25,7 +25,7 @@ const entourageData = {
   ],
 };
 
-// --- Animation Variants ---
+// --- Animation Variants (Unchanged) ---
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -35,39 +35,52 @@ const nameVariants: Variants = {
   visible: { opacity: 1, y: 0 },
 };
 
-// --- Reusable Components for different sections ---
+// --- Reusable Components with RESPONSIVE UPGRADES ---
+
 const TwoColumnSection = ({ title, left, right }: { title: string; left: string[]; right: string[] }) => (
-  <motion.div className="mb-16 text-center" variants={sectionVariants}>
-    <h3 className="mb-6 text-xl font-semibold uppercase tracking-[0.3em] text-stone-700">{title}</h3>
+  <motion.div className="mb-12 text-center md:mb-16" variants={sectionVariants}>
+    {/* Responsive heading */}
+    <h3 className="mb-6 text-lg font-semibold uppercase tracking-[0.3em] text-stone-700 md:text-xl">{title}</h3>
     <motion.div
-      className="grid grid-cols-2 gap-x-8 gap-y-2"
+      // RESPONSIVE GRID: 1 column on mobile, 2 on medium screens and up
+      className="grid grid-cols-1 gap-y-2 md:grid-cols-2 md:gap-x-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.05 }}
     >
-      <div className="text-right">{left.map(name => <motion.p key={name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">{name}</motion.p>)}</div>
-      <div className="text-left">{right.map(name => <motion.p key={name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">{name}</motion.p>)}</div>
+      {/* RESPONSIVE ALIGNMENT: Centered on mobile, right-aligned on desktop */}
+      <div className="text-center md:text-right">
+        {left.map(name => <motion.p key={name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">{name}</motion.p>)}
+      </div>
+      {/* RESPONSIVE ALIGNMENT: Centered on mobile, left-aligned on desktop */}
+      <div className="mt-2 text-center md:mt-0 md:text-left">
+        {right.map(name => <motion.p key={name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">{name}</motion.p>)}
+      </div>
     </motion.div>
   </motion.div>
 );
 
 const PairedSection = ({ leftTitle, leftName, rightTitle, rightName }: { leftTitle: string; leftName: string; rightTitle: string; rightName: string }) => (
-  <motion.div className="mb-16 grid grid-cols-2 gap-x-8 text-center" variants={sectionVariants}>
+  // RESPONSIVE GRID: Stacks on mobile, side-by-side on desktop
+  <motion.div className="mb-12 grid grid-cols-1 gap-y-8 text-center md:mb-16 md:grid-cols-2 md:gap-x-8" variants={sectionVariants}>
     <div>
-      <h3 className="mb-4 text-xl font-semibold uppercase tracking-[0.3em] text-stone-700">{leftTitle}</h3>
+      {/* Responsive heading */}
+      <h3 className="mb-4 text-lg font-semibold uppercase tracking-[0.3em] text-stone-700 md:text-xl">{leftTitle}</h3>
       <p className="text-sm uppercase tracking-wider text-stone-600">{leftName}</p>
     </div>
     <div>
-      <h3 className="mb-4 text-xl font-semibold uppercase tracking-[0.3em] text-stone-700">{rightTitle}</h3>
+      {/* Responsive heading */}
+      <h3 className="mb-4 text-lg font-semibold uppercase tracking-[0.3em] text-stone-700 md:text-xl">{rightTitle}</h3>
       <p className="text-sm uppercase tracking-wider text-stone-600">{rightName}</p>
     </div>
   </motion.div>
 );
 
 const CenteredSection = ({ title, names }: { title: string; names: string[] }) => (
-  <motion.div className="mb-16 text-center" variants={sectionVariants}>
-    <h3 className="mb-4 text-xl font-semibold uppercase tracking-[0.3em] text-stone-700">{title}</h3>
+  <motion.div className="mb-12 text-center md:mb-16" variants={sectionVariants}>
+    {/* Responsive heading */}
+    <h3 className="mb-4 text-lg font-semibold uppercase tracking-[0.3em] text-stone-700 md:text-xl">{title}</h3>
     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ staggerChildren: 0.1 }}>
       {names.map(name => <motion.p key={name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">{name}</motion.p>)}
     </motion.div>
@@ -76,7 +89,8 @@ const CenteredSection = ({ title, names }: { title: string; names: string[] }) =
 
 const BearersSection = ({ title, bearers }: { title: string; bearers: { role: string; name: string }[] }) => (
     <motion.div className="text-center" variants={sectionVariants}>
-        <h3 className="mb-4 text-xl font-semibold uppercase tracking-[0.3em] text-stone-700">{title}</h3>
+        {/* Responsive heading */}
+        <h3 className="mb-4 text-lg font-semibold uppercase tracking-[0.3em] text-stone-700 md:text-xl">{title}</h3>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} transition={{ staggerChildren: 0.1 }}>
             {bearers.map(bearer => (
                 <motion.p key={bearer.name} variants={nameVariants} className="text-sm uppercase tracking-wider text-stone-600">
@@ -87,25 +101,27 @@ const BearersSection = ({ title, bearers }: { title: string; bearers: { role: st
     </motion.div>
 );
 
-
 // --- The Main Entourage Component ---
 const Entourage = () => {
   return (
-    <section id="entourage" className="w-full bg-[#FDFBF7] py-24 px-8 md:py-32">
+    // Responsive padding
+    <section id="entourage" className="w-full bg-[#FDFBF7] py-24 px-4 md:px-8 md:py-32">
       <div className="mx-auto max-w-4xl">
         <motion.h2 
-          className="mb-20 text-center font-serif text-7xl font-bold text-stone-800"
+          // RESPONSIVE FIX: Set smaller sizes for mobile/tablet, and the perfect size for desktop
+          className="mb-12 text-center font-serif text-5xl font-bold text-stone-800 md:mb-20 md:text-7xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
           viewport={{ once: true }}
         >
-          <span className="font-script text-9xl">E</span>ntourage
+          {/* RESPONSIVE FIX: Also adjust the script font size */}
+          <span className="font-script text-7xl md:text-9xl">E</span>ntourage
         </motion.h2>
 
         <TwoColumnSection title="Principal Sponsors" {...entourageData.principalSponsors} />
         <PairedSection leftTitle="Best Man" leftName={entourageData.bestMan[0]} rightTitle="Maid of Honor" rightName={entourageData.maidOfHonor[0]} />
-        <TwoColumnSection title="Groomsmen & Bridesmen" left={entourageData.groomsmen} right={entourageData.bridesmen} />
+        <TwoColumnSection title="Groomsmen & Bridesmaids" left={entourageData.groomsmen} right={entourageData.bridesmen} />
         <TwoColumnSection title="Secondary Sponsors" {...entourageData.secondarySponsors} />
         <CenteredSection title="Flower Boys" names={entourageData.flowerBoys} />
         <BearersSection title="Bearers" bearers={entourageData.bearers} />

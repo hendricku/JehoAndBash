@@ -7,6 +7,7 @@ import TheDay from "../components/TheDay";
 import FAQ from "../components/FAQ";
 import RSVP from "../components/Rsvp";
 import Verse from "@/components/Verse";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <FAQ />
       <Verse />
       <RSVP />
+       <Footer /> 
     </main>
   );
 }
