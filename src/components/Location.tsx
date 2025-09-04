@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 
 // Animation variant for elements to fade in from below
 const fadeInAnimation: Variants = {
@@ -54,7 +55,7 @@ const Location = () => {
           {...fadeInAnimation}
         >
           {/* IMPORTANT: Replace this src with a photo of Pinewoods! */}
-          <img
+          <Image
             src="/golf.webp" // Example: /images/pinewoods-clubhouse.jpg
             alt="A scenic view of Pinewoods Golf & Country Club in Baguio City"
             className="h-full w-full object-cover"

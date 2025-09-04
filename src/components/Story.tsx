@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import clsx from "clsx"; // We'll use clsx for cleaner conditional classes
 
 
@@ -66,7 +67,7 @@ const StoryChapter = ({ chapter, index }: { chapter: typeof storyData[0]; index:
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <img src={chapter.fgImage} alt={chapter.title} className="h-full w-full object-cover" />
+          <Image src={chapter.fgImage} alt={chapter.title} className="h-full w-full object-cover" />
         </motion.div>
 
         {/* Text Content */}

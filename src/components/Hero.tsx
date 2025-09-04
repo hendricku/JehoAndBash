@@ -28,7 +28,7 @@ const MainTextContent = () => (
                 className="mb-2 text-base font-medium md:text-lg" 
                 variants={itemVariants}
             >
-                We're getting married
+                  We&apos;re getting married
             </motion.p>
             <motion.h1 
                 className="font-serif font-bold leading-none
