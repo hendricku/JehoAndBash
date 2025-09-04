@@ -58,7 +58,8 @@ const Location = () => {
           <Image
             src="/golf.webp" // Example: /images/pinewoods-clubhouse.jpg
             alt="A scenic view of Pinewoods Golf & Country Club in Baguio City"
-            className="h-full w-full object-cover"
+            fill
+            className=" object-cover"
           />
         </motion.div>
         
