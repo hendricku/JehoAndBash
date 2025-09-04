@@ -105,7 +105,7 @@ const Header: React.FC = () => {
             href="#rsvp"
             className="hidden transform rounded-full bg-white px-4 py-2 text-sm font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105 md:block md:px-6 md:text-base"
           >
-            I'm coming!
+              I&apos;m coming!
           </a>
         </div>
       </header>
@@ -160,7 +160,7 @@ const Header: React.FC = () => {
                   ))}
                    <motion.li variants={menuItemVariants}>
                      <a href="#rsvp" onClick={toggleMenu} className="mt-8 block rounded-full bg-stone-800 py-4 text-center font-serif text-2xl font-medium text-white transition-colors hover:bg-stone-700">
-                        I'm coming!
+                          I&apos;m coming!
                      </a>
                    </motion.li>
                 </motion.ul>
