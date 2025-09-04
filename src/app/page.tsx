@@ -5,6 +5,8 @@ import Location from "../components/Location";
 import Story from "../components/Story";
 import TheDay from "../components/TheDay";
 import FAQ from "../components/FAQ";
+import RSVP from "../components/Rsvp";
+import Verse from "@/components/Verse";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Story />
       <TheDay />
       <FAQ />
+      <Verse />
+      <RSVP />
     </main>
   );
 }

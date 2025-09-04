@@ -74,12 +74,15 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          <a
-            href="#rsvp"
-            className="transform rounded-full bg-white px-6 py-2 text-base font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105"
-          >
-            I&apos;m coming!
-          </a>
+        
+
+<a
+      href="#rsvp" 
+      className="transform rounded-full bg-white px-6 py-2 text-base font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105"
+    >
+         I&apos;m coming!
+    </a>
+
         </div>
       </header>
 
